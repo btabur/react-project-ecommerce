@@ -12,7 +12,7 @@ const Header = () => {
   return (
     <header className='d-flex justify-content-between align-items-center p-1 sticky-top bg-primary shadow'>
         <Link to={'/'}>
-        <h2 className='text-white'>Context Store</h2>
+        <h2 className='text-white ms-4'>E- Store</h2>
         </Link>
         <Link to={'/sepet'}>
         <i className="bi bi-basket fs-4 text-white "></i>

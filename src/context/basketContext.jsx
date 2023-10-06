@@ -1,5 +1,5 @@
 import {createContext, useState} from 'react';
-
+import {toast} from 'react-toastify'
 
 //!context yapısının temelini oluşturma
 export const BasketContext =createContext();
@@ -20,6 +20,7 @@ export function BasketProvidor({children}) {
         const newBasket = basket.map((item) => item.id===updated.id ? updated:item)
 
         setBasket(newBasket)
+        toast.success('Bir adet eklendi',{autoClose:2000})
      }else {
         setBasket(basket.concat({...product,amount:1})) 
         
@@ -43,10 +44,12 @@ export function BasketProvidor({children}) {
             const newBasket = basket.map((item) => item.id===updated.id ? updated:item)
     
             setBasket(newBasket)
+            toast.warn('Bir adet azaldı',{autoClose:2000})
 
         }else {
             const filtered = basket.filter(item=> item.id !=deleteId)
             setBasket(filtered)
+            toast.error('Ürün Çıkarıldı',{autoClose:2000})
         }
 
     }

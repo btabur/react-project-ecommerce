@@ -1,5 +1,7 @@
 import React from 'react'
 import { useContext } from 'react'
+import {BasketContext} from '../context/basketContext'
+import {toast} from 'react-toastify'
 
 
 
@@ -7,6 +9,10 @@ const Card = ({item}) => {
     //context yapısına abone olma
     //context tarafından sağlanan verilere erişim
     const context = useContext(BasketContext)
+
+    const showToast = () => {
+      toast.success("Ürün Eklendi",{autoClose:2000})
+    }
 
   return (
     <div className='card py-2 shadow  card-product' style={{width:'250px'}}>
@@ -19,6 +25,7 @@ const Card = ({item}) => {
         <p>{item.category}</p>
         <button onClick={()=> {
           context.addToBasket(item)
+          showToast()
                
           }} className='btn btn-primary'>Sepete Ekle</button>
 

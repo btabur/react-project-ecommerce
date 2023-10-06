@@ -6,3 +6,5 @@ konumlanan merkezlerde yönetmeye yarar.
 - Context tuttuğumuz bu değişkenleri herhangi bir bileşene doğrudan aktarabilir.
 - Harici bir kütüphane değildir react içerisinde yer alır. orta ölçekli uygulamalar için idealdir
 - Merkezi State Yönetim aracı
+
+![](ekran.gif)
